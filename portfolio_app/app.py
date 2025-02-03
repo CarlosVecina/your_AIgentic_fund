@@ -14,14 +14,17 @@ from portfolio_app.utils.portfolio_utils import (
 # Base de datos
 load_dotenv()
 
+
 # Page config
 st.set_page_config(
     page_title="Dystopic Index - AIgenticFund",
     page_icon="📈",
     menu_items={
+        "About": "https://www.linkedin.com/in/carlos-vecina/",
         "Get Help": "https://www.linkedin.com/in/carlos-vecina/",
     },
     layout="wide",
+    initial_sidebar_state="expanded",
 )
 
 # Load csss
