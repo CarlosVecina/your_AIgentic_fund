@@ -6,7 +6,7 @@ load_dotenv()
 
 
 class PostgresConfig(BaseSettings):
-    model_config = SettingsConfigDict(env_prefix="SB_DDBB_")
+    model_config = SettingsConfigDict(env_prefix="SSB_DDBB_")
     host: str
     port: str
     database: str

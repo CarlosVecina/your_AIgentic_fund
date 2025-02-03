@@ -1,3 +1,4 @@
+from typing import Generator
 from pydantic import BaseModel, PrivateAttr
 import logging
 
@@ -13,6 +14,7 @@ class Discussion(BaseModel):
     )
     max_turns: int = 10
     participants: list[tuple[Agent, str]]
+    stream: bool = False
 
     _current_turn: int = PrivateAttr(default=0)
     _history: list[tuple[str, str]] = PrivateAttr(default_factory=list)
@@ -21,7 +23,9 @@ class Discussion(BaseModel):
         "arbitrary_types_allowed": True,
     }
 
-    def __call__(self) -> list[tuple[str, str]]:
+    def __call__(
+        self,
+    ) -> list[tuple[str, str]] | Generator[tuple[str, str], None, None]:
         logging.info(f"Starting discussion on topic: {self.topic}")
         context = (
             f"You are in a conversation with other participants. "
@@ -57,6 +61,8 @@ class Discussion(BaseModel):
                 response = agent.discuss(agent_context)
                 logging.info(f"Response received: {response}")
                 self._history.append((agent.id, response))
+                if self.stream:
+                    yield (agent.id, response)
 
             self._current_turn += 1
 
