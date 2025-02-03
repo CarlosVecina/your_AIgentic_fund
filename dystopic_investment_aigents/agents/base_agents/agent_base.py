@@ -47,5 +47,6 @@ class Agent(BaseModel):
             messages=[{"role": "user", "content": message}], **self.seniority_args
         )
         response_text = response.choices[0].message.content
+        self.memory.add_message(message, "user")
         self.memory.add_message(response_text, "assistant")
         return response_text
