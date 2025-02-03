@@ -50,3 +50,5 @@ logs/
 
 *.db
 *.csv
+
+depr/
