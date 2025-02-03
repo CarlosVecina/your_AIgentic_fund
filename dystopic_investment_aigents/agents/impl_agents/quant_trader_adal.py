@@ -13,7 +13,7 @@ from dystopic_investment_aigents.agents.base_agents.quant_trader_base import (
     Portfolio,
     QuantTraderBase,
 )
-from dystopic_investment_aigents.agents.base_prompts.quant_trader_base_prompt import (
+from config.base_prompts.quant_trader_base_prompt import (
     QUANT_TRADER_AGENTS_SYSTEM_PROMPT,
 )
 

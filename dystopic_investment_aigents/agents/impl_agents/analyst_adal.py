@@ -3,7 +3,7 @@ from pydantic import computed_field
 from adalflow.core import Generator
 from adalflow.components.agent import ReActAgent
 from dystopic_investment_aigents.agents.base_agents.analyst_base import AnalystBase
-from dystopic_investment_aigents.agents.base_prompts.analyst_base_prompt import (
+from config.base_prompts.analyst_base_prompt import (
     ANALYST_AGENTS_SYSTEM_PROMPT,
 )
 

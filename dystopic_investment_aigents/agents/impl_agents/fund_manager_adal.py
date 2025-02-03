@@ -8,7 +8,7 @@ from dystopic_investment_aigents.agents.base_agents.fund_manager_base import (
     FundDirective,
     FundManagerBase,
 )
-from dystopic_investment_aigents.agents.base_prompts.fund_manager_base_prompt import (
+from config.base_prompts.fund_manager_base_prompt import (
     FUND_MANAGER_AGENTS_SYSTEM_PROMPT,
 )
 
