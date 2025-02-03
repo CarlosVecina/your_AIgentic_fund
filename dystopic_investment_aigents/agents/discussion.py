@@ -25,7 +25,7 @@ class Discussion(BaseModel):
         logging.info(f"Starting discussion on topic: {self.topic}")
         context = (
             f"You are in a conversation with other participants. "
-            f"Try to be persuasive and convince the other participants to agree with you. "
+            f"Try to be persuasive and convince the other participants to agree with you. Focus on the last response of the other participants if any and try to improve it. "
             f"Topic of discussion: {self.topic}\n"
             f"Rules: {self.rules}\n"
         )
